@@ -1,15 +1,29 @@
-let xhr = new XMLHttpRequest();
+// import 'bootstrap';
+
+let url = '';
+if(DEV === 'dev'){
+  url = 'http://localhost:3000'
+}else{
+  url = 'http://www.baidu.com'
+}
+console.log(url, '----------');
+console.log(typeof FLAG);
+console.log(EXPORESSION);
+
+
+// import './style'
+// let xhr = new XMLHttpRequest();
 
 // http://localhost:8080 webpack-dev-server的服务 -> 3000
 
 // http-proxy
-xhr.open('GET', '/user', true);
+// xhr.open('GET', '/user', true);
 
-xhr.onload = function(){
-  console.log(xhr.response);
-}
+// xhr.onload = function(){
+//   console.log(xhr.response);
+// }
 
-xhr.send();
+// xhr.send();
 
 // console.log('home');
 

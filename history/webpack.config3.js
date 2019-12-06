@@ -13,6 +13,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
         test: /\.js$/,
         use: {
           loader: 'babel-loader',
@@ -22,6 +26,15 @@ module.exports = {
         }
       }
     ]
+  },
+  resolve: { // 解析 第三方包 common
+    modules: [ path.resolve('node_modules') ],
+    extensions: ['.js', '.css', '.json', 'vue'],
+    // mainFields: ['style', 'main']
+    // mainFields: [], // 入口文件的名字 index.js
+    // alias: { // 别名 vue vue.runtime
+    //   bootstrap: 'bootstrap/dist/css/bootstrap.css'
+    // }
   },
   devServer: {
     // 3) 由服务端 不用用代理来处理 能不能再服务端中启动webpack 端口用webpack端口
